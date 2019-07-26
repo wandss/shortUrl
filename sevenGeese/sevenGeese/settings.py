@@ -109,5 +109,3 @@ CACHES = {
         'KEY_PREFIX':'django'
     }
 }
-
-CACHE_TTL = 60 * 10
