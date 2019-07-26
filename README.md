@@ -1,5 +1,6 @@
 # shortenUrl Project
-### Description
+
+## Description
 This is a Django GraphQL API service, used to create short urls.
 
 Users sends an url address to the backend and a shorted version of this url will be created.
@@ -7,6 +8,13 @@ Users sends an url address to the backend and a shorted version of this url will
 When querying the API for an specific url, it's shorted version will be retrieved.
 
 Trying to access the system with the short version of the url, will redirect the user to the the original url.
+
+## Technical Notes
+### Architectural decisions
+
+I decided to divide this project in two, represeting each, one architectural option.
+- First scenario: Urls are stored and retrieved in Redis. **(branch master)**
+- Second scenario: Urls are persisted in relational databases. **(branch version2-no-redis)**
 
 ### How to install:
 1. [Clone this project](https://github.com/wandss/shortenUrl.git)
