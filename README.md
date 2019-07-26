@@ -12,7 +12,7 @@ Trying to access the system with the short version of the url, will redirect the
 ## Technical Notes
 ### Architectural decisions
 
-I decided to divide this project in two, represeting each, one architectural option.
+I decided to divide this project in two, each representing, one architectural option.
 - First scenario: Urls are stored and retrieved in Redis. **(branch master)**
 - Second scenario: Urls are persisted in relational databases. **(branch version2-no-redis)**
 
