@@ -4,6 +4,8 @@ from graphene.test import Client
 
 from sevenGeese.schema import schema
 
+from .models import Urls
+
 
 class GraphQLTestCase(TestCase):
 
@@ -12,24 +14,43 @@ class GraphQLTestCase(TestCase):
         query = """
         query{
             urls{
-                shortUrl
+                id, shortUrl, normalUrl
             }
         }
         """
-        expected = { "urls": {"shortUrl": None}}
+        expected = { "urls": [] }
         result = schema.execute(query)
         assert not result.errors
         assert result.data == expected
 
-
-    def test_url(self):
-
-        query = """
-        query{
-            urls(url:"7geese.com"){
-                shortUrl
+    def test_create_url(self):
+        mutation = """
+        mutation{
+            createUrl(url:"7geese.com"){
+                url{id, shortUrl, normalUrl}
             }
         }
         """
-        result = schema.execute(query)
-        assert not result.errors
+        mutation = schema.execute(mutation)
+        assert not mutation.errors
+
+    def test_url(self):
+
+        mutation = """
+        mutation{
+            createUrl(url:"7geese.com"){
+                url{id, shortUrl, normalUrl}
+            }
+        }
+        """
+        mutation_result = schema.execute(mutation)
+        assert not mutation_result.errors
+        query = """
+        query{url(url:"7geese.com"){
+                id, shortUrl, normalUrl
+             }
+        }
+        """
+        query_result = schema.execute(query)
+        assert not query_result.errors
+        assert mutation_result.data.get('createUrl') == query_result.data

@@ -2,13 +2,11 @@ from math import floor
 import string
 
 
-def create_short_url(integer):
-    """Convert an integer to base62 format"""
-
+def create_short_url(pk):
     base62 = "{}{}".format(string.digits, string.ascii_letters)
-    index = integer % 62
+    index = pk % 62
     short_url = base62[index]
-    quocient = floor(integer / 62)
+    quocient = floor(pk / 62)
 
     while quocient:
         index = quocient % 62
