@@ -49,13 +49,22 @@ python manage.py runserver
 
 ### Querying the API through the provided interface
 #### Querying urls:
+##### Querying normal url
 ```
 {urls(url:"7geese.com/features/objectives-and-key-results-okrs/"){
-  	shortUrl
+  	url
 	}
 }
 ```
 *The shortened url will be retrieved*
+##### Querying short url
+_*use the short url retrieved in last step._
+```
+{urls(url:"<url-returned-in-last-step>"){
+  	url
+	}
+}
+```
 
 #### Accessing the short url:
 On the browser, access the address for the running server, attaching the short url at the end like:
