@@ -1,4 +1,4 @@
-# shortenUrl Project
+# shorteUrl Project
 
 ## Description
 This is a Django GraphQL API service, used to create short urls.
