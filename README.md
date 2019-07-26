@@ -19,65 +19,39 @@ I decided to divide this project in two, each representing, one architectural op
 ### How to install:
 1. [Clone this project](https://github.com/wandss/shortenUrl.git)
 2. Create an [virtualenv](https://virtualenv.pypa.io/en/latest/). Not required, but **highly** recommended
-3. Inside project's root directory run (after activating virtualenv):
+3. Activate the created virtualenv
+4. Inside project's root directory run:
 ```
 pip install -r requirements.txt
 ```
-4. Enter in the project directory (sevenGeese directory), same level as **manage.py** script and run:
+5. Inside project's directory (sevenGeese directory), same level as **manage.py** script run:
 ```
 python manage.py migrate
-python manage.py makemigrations urlShortener
-python manage.py migrate
 ```
+
 ### How to run the project
-1. Inside the same directory from step 4 above, run:
+1. Inside the same directory from step 5 above, run:
 ```
 python manage.py runserver
 ```
 **Take note at the address showed at prompt**
 
 2. Open a web browser
-3. Acces the address showed at the prompt, probably **http://127.0.0.1:8000/graphql**
+3. Access the address showed at the prompt, probably **http://127.0.0.1:8000/graphql**
 
 ### Querying the API through the provided interface
-#### Querying existents urls:
+#### Querying urls:
 ```
-{urls{
-    id, normalUrl, shortUrl
-  }
+{urls(url:"7geese.com/features/objectives-and-key-results-okrs/"){
+  	shortUrl
+	}
 }
 ```
-*A list with all available urls will be displayed*
-#### Creating an url:
-```
-mutation{
-  createUrl(url:"github.com"){
-    url{
-      normalUrl
-      shortUrl
-    }
-  }
-}
-```
-#### Retrieving short url for an especific url:
-```
-{
-  url(url:"github.com"){
-    shortUrl
-  }
-}
-```
-#### Retrieving normal url for an especific short url:
-```
-{
-  url(url:"7gs.9"){
-    normalUrl
-  }
-}
-```
+*The shortened url will be retrieved*
+
 #### Accessing the short url:
 On the browser, access the address for the running server, attaching the short url at the end like:
 ```
-http://127.0.0.1:8000/7gs.9
+http://127.0.0.1:8000/<returned-url>
 ```
 The system will redirect you for the url associated to the short url.
