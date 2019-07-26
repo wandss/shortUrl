@@ -24,11 +24,16 @@ I decided to divide this project in two, each representing, one architectural op
 ```
 pip install -r requirements.txt
 ```
+
 5. Inside project's directory (sevenGeese directory), same level as **manage.py** script run:
 ```
 python manage.py migrate
 ```
-
+6. Set redis addres in settings.py
+- In **file settings.py**, add the addres to you redis server in **CACHES** property:
+```
+'LOCATION': 'redis://<your-redis-server-address>'
+```
 ### How to run the project
 1. Inside the same directory from step 5 above, run:
 ```
