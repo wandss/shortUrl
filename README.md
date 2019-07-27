@@ -40,38 +40,19 @@ python manage.py runserver
 3. Access the address showed at the prompt, probably **http://127.0.0.1:8000/graphql**
 
 ### Querying the API through the provided interface
-#### Querying existents urls:
+#### Querying url:
 ```
-{urls{
-    id, normalUrl, shortUrl
+{url(url:"7geese.com/features/career-management/"){
+    url
   }
 }
 ```
-*A list with all available urls will be displayed*
-#### Creating an url:
-```
-mutation{
-  createUrl(url:"github.com"){
-    url{
-      normalUrl
-      shortUrl
-    }
-  }
-}
-```
-#### Retrieving short url for an especific url:
-```
-{
-  url(url:"github.com"){
-    shortUrl
-  }
-}
-```
+*The short url will be returned*
 #### Retrieving normal url for an especific short url:
 ```
 {
-  url(url:"7gs.9"){
-    normalUrl
+  url(url:"7gs.2"){
+    url
   }
 }
 ```
