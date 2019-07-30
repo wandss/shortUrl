@@ -25,7 +25,7 @@ class Query(graphene.ObjectType):
                 short_url__endswith=url).last().normal_url
             return UrlsType(url=url)
 
-        elif Urls.objects.filter(normal_url__endswith=url).exists():
+        if Urls.objects.filter(normal_url__endswith=url).exists():
             url = Urls.objects.filter(
                 normal_url__endswith=url).last().short_url
             return UrlsType(url=url)
