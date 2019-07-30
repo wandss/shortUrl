@@ -16,6 +16,9 @@ I decided to divide this project in two, each representing, one architectural op
 - First scenario: Urls are stored and retrieved in Redis. **(branch master)**
 - Second scenario: Urls are persisted in relational databases. **(branch version2-no-redis)**
 
+### Try it out
+To use this app right away, access the deployed version **[HERE](https://wandss-urlshortener.herokuapp.com/graphql)**
+
 ### How to install:
 1. [Clone this project](https://github.com/wandss/shortenUrl.git)
 2. Create a [virtualenv](https://virtualenv.pypa.io/en/latest/). Not required, but **highly** recommended
