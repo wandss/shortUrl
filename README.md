@@ -46,7 +46,7 @@ python manage.py runserver
 
 2. Open a web browser
 3. Access the address showed at the prompt **http://127.0.0.1:8000/graphql**
-*change address and port to suite your configuration*
+*change address and port to suit your configuration*
 
 ### Querying the API through the provided interface
 #### Querying urls:
