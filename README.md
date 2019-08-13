@@ -5,6 +5,8 @@ This is a Django GraphQL API service, used to create short urls.
 
 When querying the API for an specific url, it's shorted version will be retrieved.
 
+By querying the short url, the original url (which was used to create the dhort version) will be retrieved.
+
 Trying to access the system with the short version of the url, will redirect the user to the the original url.
 
 ## Technical Notes
