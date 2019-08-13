@@ -3,8 +3,6 @@
 ## Description
 This is a Django GraphQL API service, used to create short urls.
 
-Users sends an url address to the backend and a shorted version of this url will be created.
-
 When querying the API for an specific url, it's shorted version will be retrieved.
 
 Trying to access the system with the short version of the url, will redirect the user to the the original url.
