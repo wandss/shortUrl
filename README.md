@@ -31,7 +31,7 @@ pip install -r requirements.txt
 python manage.py migrate
 ```
 
-6. Set redis addres in settings.py
+6. Set redis address in settings.py
 - In file **settings.py**, add the address to you redis server in **CACHES** property:
 ```
 'LOCATION': 'redis://<your-redis-server-address>'
