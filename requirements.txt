@@ -7,7 +7,7 @@ graphql-core==2.2.1
 graphql-relay==2.0.0
 promise==2.2.1
 pytz==2019.1
-redis==3.2.1
+redis==4.5.3
 Rx==1.6.1
 singledispatch==3.4.0.3
 six==1.12.0
